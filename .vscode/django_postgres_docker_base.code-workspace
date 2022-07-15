@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"python.analysis.typeCheckingMode": "basic",
+		"window.zoomLevel": 0.5,
+		"editor.formatOnSaveMode": "file",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true,
+		},
+		"python.linting.pylintEnabled": true,
+		"python.linting.enabled": true,
+		"python.formatting.provider": "black",
+		"workbench.colorCustomizations": {
+			"titleBar.activeBackground": "#63291a",
+			"tab.activeForeground": "#e7bc4f",
+			"tab.inactiveForeground": "#e6e1d4",
+			"tab.activeBorder": "#e7bc4f8f",
+		}
+	}
+}
