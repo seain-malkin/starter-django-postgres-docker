@@ -20,6 +20,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     build-essential \
     libpq-dev \
+    netcat \
     && rm -rf /var/lib/apt/lists/*
 
 # Install app dependencies

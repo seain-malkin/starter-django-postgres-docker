@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 services:
   app:
@@ -9,11 +9,19 @@ services:
       - ./src/:/usr/src/app
     ports:
       - 8000:8000
+    environment:
+      - DJANGO_ALLOWED_HOSTS="localhost 127.0.0.1 [::1]"
+      - SQL_DATABASE=DPDB_db_dev
+      - SQL_ENGINE=django.db.backends.postgresql
+      - SQL_HOST=db
+      - SQL_PORT=5432
+      - DATABASE=postgres
     env_file:
       - ./dev.env
     depends_on:
-      - postgres
-  postgres:
+      - db
+
+  db:
     container_name: DPDB_postgres
     image: postgres:latest
     volumes:
@@ -21,6 +29,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=app_dev
+      - POSTGRES_DB=DPDB_db_dev
+
 volumes:
-    postgres_data:
+  postgres_data:
